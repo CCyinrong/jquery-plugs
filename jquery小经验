@@ -1,0 +1,21 @@
+1、jQuery.fn.autoscroll = function(selector) {//自动滚动到页面中的某区域
+    $('html,body').animate(
+        {scrollTop: $(selector).offset().top},
+        500
+    };
+}
+//然后像这样来滚动到你希望去到的class/area上。
+$('.area_name').autoscroll();
+2、jQuery.fn.center = function() {//把一个元素放在屏幕的中心位置
+    this.css('position','absolute');
+    this.css('top', ( $(window).height() - this.height() ) / 2+$(window).scrollTop() + 'px');
+    this.css('left', ( $(window).width() - this.width() ) / 2+$(window).scrollLeft() + 'px');
+    return this;
+}
+3、jQuery.preloadImages = function() {//用jQuery来预加载图像
+    for(vari = 0; i < arguments.length; i++) {
+        $("<img />").attr('src', arguments[i]);
+    }
+};
+//用法
+$.preloadImages('image1.gif', '/path/to/image2.png', 'some/image3.jpg');
